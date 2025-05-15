@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Jogo da Velha</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="start-screen">
+    <label>
+  <input type="checkbox" id="vsBot" />
+  Jogar contra o Bot
+</label>
+
+    <h1>Jogo da Velha</h1>
+    <input type="text" id="playerX" placeholder="Nome do Jogador X" />
+    <input type="text" id="playerO" placeholder="Nome do Jogador O" />
+    <button onclick="startGame()">Começar</button>
+  </div>
+
+  <div id="game" style="display: none; flex-direction: column; align-items: center;">
+    <h1>Jogo da Velha</h1>
+    <div class="placar">
+      🏆 <span id="nameX">X</span>: <span id="scoreX">0</span> |
+      <span id="nameO">O</span>: <span id="scoreO">0</span>
+    </div>
+    <div class="status" id="status"></div>
+    <div class="board" id="board"></div>
+    <button onclick="resetGame()">Reiniciar</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

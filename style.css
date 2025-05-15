@@ -1,0 +1,119 @@
+body {
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #f0f0f0;
+  margin: 0;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 10px;
+  margin: 5px;
+  font-size: 1rem;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 5px;
+  margin-top: 20px;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background: white;
+  border: 2px solid #333;
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.2s ease;
+}
+
+.cell:hover {
+  background: #e0e0e0;
+}
+
+.cell:active {
+  transform: scale(0.95);
+  background: #d0ffd0;
+}
+
+.status {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.placar {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+/* Animação clique na célula */
+@keyframes clickScale {
+  0% { transform: scale(1); background-color: white; }
+  50% { transform: scale(1.1); background-color: #d0ffd0; }
+  100% { transform: scale(1); background-color: white; }
+}
+
+.cell.clicked {
+  animation: clickScale 0.3s ease;
+}
+
+/* Animação vitória - brilho pulsante */
+@keyframes winnerGlow {
+  0%, 100% { box-shadow: 0 0 10px 2px #00ff00; }
+  50% { box-shadow: 0 0 20px 5px #00ff00; }
+}
+
+.cell.winner {
+  animation: winnerGlow 1s infinite;
+  background-color: #d4ffd4 !important;
+}
+
+/* Animação placar atualizando */
+@keyframes scorePulse {
+  0%, 100% { color: black; }
+  50% { color: #007bff; font-weight: bold; }
+}
+
+#scoreX.updated, #scoreO.updated {
+  animation: scorePulse 1s ease;
+}
+
+/* Suaviza mudança de status */
+.status {
+  transition: color 0.4s ease;
+}
+
+/* Botão reiniciar animado ao hover */
+button:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
