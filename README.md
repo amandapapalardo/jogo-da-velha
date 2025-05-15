@@ -2,6 +2,12 @@
 
 Jogo da Velha feito com HTML, CSS e JavaScript.
 
+## Link para jogar online
+
+Você pode jogar o jogo direto pelo GitHub Pages aqui:
+
+➡️ [https://amandapapalardo.github.io/jogo-da-velha/](https://amandapapalardo.github.io/jogo-da-velha/)
+
 ## Funcionalidades
 
 - Tela inicial para inserir nomes dos jogadores
@@ -44,3 +50,4 @@ Se quiser contribuir ou sugerir melhorias, fique à vontade para abrir uma issue
 ---
 
 Feito com ❤️ por Amanda Papalardo
+
